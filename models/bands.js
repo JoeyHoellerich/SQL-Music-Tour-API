@@ -1,3 +1,5 @@
+// Created without sequelize CLI
+
 const { Sequelize, DataTypes, Model } = require("sequelize")
 
 class Band extends Model{}
