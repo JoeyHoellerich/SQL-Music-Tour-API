@@ -8,6 +8,16 @@ require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+// CONTROLLERS 
+const bandsController = require('./controllers/band_controller')
+app.use('/bands', bandsController)
+
+const eventsController = require("./controllers/event_controller")
+app.use('/events', eventsController)
+
+const stagesController = require("./controllers/stage_controller")
+app.use('/stages', stagesController)
+
 const sequelize = new Sequelize({
     storage: process.env.PG_URI,
     dialect: "postgres",
